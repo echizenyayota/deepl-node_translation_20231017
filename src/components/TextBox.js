@@ -1,7 +1,10 @@
-const TextBox = () => {
+const TextBox = ({ style }) => {
   return (
     <div>
-      TextBox
+      <textarea 
+        placeholder={style === "input" ? "Enter Text" : "translation"}
+        disabled={style === "output"}
+      />
     </div>
   )
 };
