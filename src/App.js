@@ -18,19 +18,22 @@ const App = () => {
 
   return (
     <div className="app">
-      <TextBox
-        selectedLanguage={inputLanguage}
-        style="input"
-        setShowModal={setShowModal}
-      />
-      <div className="arrow-container" onClick={handleClick}>
-        <Arrows />
-      </div>
-      <TextBox
-        selectedLanguage={outputLanguage}
-        style="output"
-        setShowModal={setShowModal} 
-      />
+      {!showModal && <>
+        <TextBox
+          selectedLanguage={inputLanguage}
+          style="input"
+          setShowModal={setShowModal}
+        />
+        <div className="arrow-container" onClick={handleClick}>
+          <Arrows />
+        </div>
+        <TextBox
+          selectedLanguage={outputLanguage}
+          style="output"
+          setShowModal={setShowModal} 
+        />
+      </>}
+      {showModal && <Modal />}
     </div>
   );
 }
