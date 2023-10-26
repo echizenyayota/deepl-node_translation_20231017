@@ -34,7 +34,7 @@ app.get("/translation", async(req, res) => {
 
   try {
     (async () => {
-      const result = await translator.translateText('good evening', null, "ja");
+      const result = await translator.translateText('good evening', "en", "ja");
       console.log(result.text);
       res.status(200).json(result.text);
     })();
