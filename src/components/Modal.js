@@ -19,7 +19,7 @@ const Modal = ({ setShowModal, languages }) => {
   console.log(searchedLanguage);
 
   return (
-    <div className="option-List">
+    <div className="option-list">
       <div className="search-bar">
         <input value={searchedLanguage} onChange={handleChange} />
         <div className="close-button" onClick={() => setShowModal(null)}>
