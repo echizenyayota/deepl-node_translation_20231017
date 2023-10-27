@@ -9,6 +9,12 @@ const TextBox = ({
   setTranslatedText,
   translatedText
 }) => {
+
+  const handleClick = () => {
+    setTextToTranslate("");
+    setTranslatedText("");
+  }
+
   return (
     <div className={style}>
       <SelectDropDown
