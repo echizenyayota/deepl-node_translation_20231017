@@ -10,11 +10,25 @@ const App = () => {
   const [outputLanguage, setOutputLanguage] = useState("Japanese");
   const [showModal, setShowModal] = useState(null);
   const [languages, setLanguages] = useState(null);
+  const [textToTranslate, setTextToTranslate] = useState("");
+  const [translatedText, setTranslatedText] = useState("");
 
   const getLanguages = async() => {
     const response = await axios("http://localhost:8000/languages");
     setLanguages(response.data);
   }
+
+  const translate = async () => {
+    const data = {
+      textToTranslate, outputLanguage, inputLanguage
+    }
+    const response = await axios("http://localhost:8000/translation", {
+      params: data,
+    });
+    setTranslatedText(response.data);
+  }
+
+  console.log("translatedText", translatedText);
 
   console.log("languages", languages);
 
