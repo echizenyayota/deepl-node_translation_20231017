@@ -14,7 +14,7 @@ const App = () => {
   const [translatedText, setTranslatedText] = useState("");
 
   const getLanguages = async() => {
-    const response = await axios("http://localhost:8000/languages");
+    const response = await axios.get("http://localhost:8000/languages");
     setLanguages(response.data);
   }
 
@@ -22,7 +22,7 @@ const App = () => {
     const data = {
       textToTranslate, outputLanguage, inputLanguage
     }
-    const response = await axios("http://localhost:8000/translation", {
+    const response = await axios.get("http://localhost:8000/translation", {
       params: data,
     });
     setTranslatedText(response.data);
