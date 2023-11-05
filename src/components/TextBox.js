@@ -21,12 +21,12 @@ const TextBox = ({
         style={style} 
         selectedLanguage={selectedLanguage}
         setShowModal={setShowModal}
-        onChange={(e) => setTextToTranslate(e.target.value)}
-        value={style === "input" ? textToTranslate : translatedText}
       />
       <textarea 
         placeholder={style === "input" ? "Enter Text" : "translation"}
         disabled={style === "output"}
+        value={style === "input" ? textToTranslate : translatedText}
+        onChange={(e) => setTextToTranslate(e.target.value)}
       />
       {style === "input" && (
         <div className="delete" onClick={handleClick}>x</div>
