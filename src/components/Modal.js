@@ -16,7 +16,6 @@ const Modal = ({ setShowModal, languages, chosenLanguage, setChosenLanguage }) =
     setShowModal(null);
   }
 
-  console.log(searchedLanguage);
   return (
     <div className="option-list">
       <div className="search-bar">
@@ -34,12 +33,11 @@ const Modal = ({ setShowModal, languages, chosenLanguage, setChosenLanguage }) =
       <div className="option-container">
         <ul>
           {filteredLanguages?.map((filteredLanguage, _index) => (
-            <div className="list-item">
+            <div className="list-item" key={_index}>
               <div className="icon">
                 {chosenLanguage === filteredLanguage ? "✓" : ""}
               </div>
                 <li
-                  key={_index}
                   onClick={handleClick}
                   style={{color: chosenLanguage === filteredLanguage ? "#f8c4ce" : null}}
                 >
